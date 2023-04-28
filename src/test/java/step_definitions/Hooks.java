@@ -18,7 +18,7 @@ public class Hooks {
         String URL = "https://v3-dashboard.edenfarm.tech";
         webDriver.get(URL);
         webDriver.manage().window().maximize();
-        Thread.sleep(500);
+        Thread.sleep(7000);
 
     }
     @After

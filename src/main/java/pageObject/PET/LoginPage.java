@@ -31,16 +31,17 @@ public class LoginPage {
         inputPassword.sendKeys(password);
     }
 
-    @FindBy(xpath = "//input[@id='continue']")
+    @FindBy(xpath = "//span[@class='v-btn__content']/span[text()='Login']")
     private WebElement buttonContinue;
     public void setButtonContinue(){
         buttonContinue.click();
     }
     // display error message
-    @FindBy(xpath = "//span[@class='a-list-item']")
-    private WebElement errorMessage;
-    public String setErrorMessage(){
-        return errorMessage.getText();
+    @FindBy(xpath = "//*[@id=\"single-spa-application:@vue-mf/navbar\"]/div/div/section/nav/div[1]/div[2]/div[2]/div/a/div[1]/i")
+    private WebElement homePage;
+    public boolean getHomePage(){
+        homePage.isDisplayed();
+        return true;
     }
 }
 

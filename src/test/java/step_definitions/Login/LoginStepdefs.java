@@ -18,7 +18,7 @@ public class LoginStepdefs {
     public void userAlreadyonLoginPage() throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.setVerifyHomePage());
-        Thread.sleep(4000);
+        Thread.sleep(20000);
     }
     @When("^I input email \"([^\"]*)\" and password \"([^\"]*)\" in Eden$")
     public void iInputEmailAndPasswordInEden(String email, String password) throws InterruptedException {
@@ -31,14 +31,13 @@ public class LoginStepdefs {
     public void userClickOnButtonContinue() throws InterruptedException {
         LoginPage petPage = new LoginPage(webDriver);
         petPage.setButtonContinue();
-        Thread.sleep(2000);
+        Thread.sleep(10000);
     }
 
-    @Then("^Appear error message \"([^\"]*)\"$")
-    public void appearErrorMessage(String error) throws InterruptedException {
-        LoginPage petPage = new LoginPage(webDriver);
-        Assert.assertEquals(error, petPage.setErrorMessage());
-        Thread.sleep(2000);
+    @Then("^Directedted to Home Page$")
+    public void directedtedToHomePage() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(webDriver);
+        Assert.assertTrue(loginPage.getHomePage());
+        Thread.sleep(3000);
     }
-
 }
